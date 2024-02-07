@@ -1,0 +1,86 @@
+body {
+
+    font-family: "Inter", sans-serif;
+
+    nav {
+        height: 100px;
+        width: 100%;
+        background-color: cyan;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .brand-name {
+            font-size: 3rem;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            width: 50px;
+            cursor: pointer;
+            position: fixed;
+            top: 5px;
+            right: 5px;
+
+            .line {
+                height: 8px;
+                width: 100%;
+                background-color: gray;
+                border-radius: 100vw;
+                margin: 4px;
+            }
+        }
+
+        .links-container {
+            list-style: none;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+
+            .link {
+                padding: 1rem;
+                font-size: 1.5rem;
+                align-self: center;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: gray
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        nav {
+            height: fit-content;
+            justify-content: flex-end;
+
+            .brand-name {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                margin: 0.5rem;
+            }
+
+            .links-container {
+                display: none;
+
+                &.active {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
